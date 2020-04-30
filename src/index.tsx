@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import ResizeObserverWrapper from './resize-observer';
+import { OnResize } from './types';
 
 let defaultObserver: ResizeObserverWrapper;
 
@@ -11,7 +12,12 @@ const getDefaultObserver = () => {
   return defaultObserver;
 };
 
-export default class ResizeWatcher extends Component {
+type ResizeWatcherProps = {
+  children: React.ReactNode;
+  onResize: Function;
+};
+
+export default class ResizeWatcher extends Component<ResizeWatcherProps> {
   componentDidMount() {
     if (this.node && this.node instanceof HTMLElement) {
       this.observe = getDefaultObserver().observe;
@@ -23,7 +29,7 @@ export default class ResizeWatcher extends Component {
 
   componentWillUnmount() {
     if (this.node) {
-      this.unobserve(this.node);
+      this.unobserve && this.unobserve(this.node);
       delete this.node;
     }
   }
@@ -36,9 +42,10 @@ export default class ResizeWatcher extends Component {
 
   render() {
     return React.Children.only(
-      React.cloneElement(this.props.children, {
-        ref: (node) => {
+      React.cloneElement(this.props.children as React.ReactElement<any>, {
+        ref: (node: Element) => {
           this.node = node;
+          // @ts-ignore
           const { ref } = this.props.children;
 
           if (typeof ref === 'function') {

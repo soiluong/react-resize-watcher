@@ -1,13 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "esnext",
+    "module": "esnext",
     "declaration": true,
     "outDir": "./lib",
     "removeComments": true,
     "moduleResolution": "node",
+    "jsx": "react",
     "strict": true,
-    "esModuleInterop": true
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "emitDeclarationOnly": true
   },
-  "include": ["src"]
+  "include": ["./src"]
 }

@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "type-check": "tsc"
   },
   "repository": {
     "type": "git",
@@ -28,16 +29,21 @@
     "react-dom": "^16.3.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-links": "^5.3.18",
     "@storybook/addons": "^5.3.18",
+    "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^5.3.18",
     "babel-loader": "^8.1.0",
+    "babel-preset-react-app": "^9.1.2",
     "prettier": "^2.0.5",
+    "ts-loader": "^7.0.2",
     "typescript": "^3.8.3"
   },
-  "dependencies": {},
   "prettier": {
     "trailingComma": "none",
     "singleQuote": true,

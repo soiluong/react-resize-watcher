@@ -1,1 +1,1 @@
-type OnResize = (entry: ResizeObserverEntry) => any;
+export type OnResize = (entry: ResizeObserverEntry) => any;

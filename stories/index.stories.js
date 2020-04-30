@@ -1,5 +1,5 @@
 import React from 'react';
-import ResizeWatcher from '../src/ResizeWatcher';
+import ResizeWatcher from '../src';
 
 export default {
   title: 'Resize Watcher Demo'

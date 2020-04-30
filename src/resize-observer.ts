@@ -1,3 +1,5 @@
+import { OnResize } from './types';
+
 interface QueuedItem {
   child: Element;
   onResize: OnResize;
