@@ -1,0 +1,1 @@
+type OnResize = (entry: ResizeObserverEntry) => any;
