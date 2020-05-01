@@ -19,6 +19,7 @@ export default class ResizeObserverWrapper {
   }
 
   createObserver() {
+    console.log('create new observer');
     this.observer = new ResizeObserver(this.fireListeners);
   }
 
@@ -35,8 +36,9 @@ export default class ResizeObserverWrapper {
 
     this.observedQueue.forEach(({ child, onResize }) => {
       this.observedMap.set(child, onResize);
-      this.observer && this.observer.observe(child);
+      this.observer?.observe(child);
     });
+    console.log(this.observedQueue);
   }
 
   observe = (child: Element, onResize: OnResize) => {
@@ -47,7 +49,11 @@ export default class ResizeObserverWrapper {
 
   unobserve = (child: Element) => {
     this.observedMap.delete(child);
-    this.observer && this.observer.unobserve(child);
+    this.observedQueue.splice(
+      this.observedQueue.findIndex((item) => item.child === child),
+      1
+    );
+    this.observer?.unobserve(child);
     this.activeObservers.splice(this.activeObservers.indexOf(child), 1);
   };
 }

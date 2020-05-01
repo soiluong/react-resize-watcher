@@ -1,5 +1,5 @@
-import React from 'react';
-import ResizeWatcher from '../src';
+import React, { useEffect } from 'react';
+import { ResizeWatcherElement, resizeWatcher } from '../src';
 
 export default {
   title: 'Resize Watcher Demo'
@@ -9,11 +9,11 @@ const log = (props) => console.log(props);
 
 export const ResizeWatcherDemo = () => (
   <div>
-    <ResizeWatcher onResize={log}>
+    <ResizeWatcherElement onResize={log}>
       <div style={{ width: '100%', height: '300px', background: 'red' }} />
-    </ResizeWatcher>
+    </ResizeWatcherElement>
 
-    <ResizeWatcher onResize={log}>
+    <ResizeWatcherElement onResize={log}>
       <div
         style={{
           width: '100%',
@@ -22,9 +22,9 @@ export const ResizeWatcherDemo = () => (
           background: 'blue'
         }}
       />
-    </ResizeWatcher>
+    </ResizeWatcherElement>
 
-    <ResizeWatcher onResize={log}>
+    <ResizeWatcherElement onResize={log}>
       <div
         style={{
           width: '100%',
@@ -33,6 +33,21 @@ export const ResizeWatcherDemo = () => (
           background: 'green'
         }}
       />
-    </ResizeWatcher>
+    </ResizeWatcherElement>
   </div>
 );
+
+export const StaticResizeWatcherDemo = () => {
+  useEffect(() => {
+    const observedElement = resizeWatcher('.container', log);
+
+    // unobserve element on unmount
+    return observedElement;
+  });
+  return (
+    <div
+      style={{ width: '100%', height: '300px', background: 'red' }}
+      className="container"
+    />
+  );
+};
