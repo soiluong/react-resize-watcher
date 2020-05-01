@@ -111,7 +111,7 @@ React Resize Watcher is dependent on the `ResizeObserver` API and `WeakMap`:
 
 ### Resize Observer API
 
-[Browser support](https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API#Browser_compatibility) | [Polyfill](https://www.npmjs.com/package/resize-observer-polyfill)
+[Browser support](https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API#Browser_compatibility) | [Polyfill](https://www.npmjs.com/package/@juggle/resize-observer)
 
 ### WeakMap
 
