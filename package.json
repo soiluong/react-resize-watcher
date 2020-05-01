@@ -1,14 +1,16 @@
 {
   "name": "react-resize-watcher",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A React interface for the Resize Observer API",
-  "main": "./lib/main.js",
-  "types": "./lib/main.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "dist/react-resize-watcher.es.js",
+  "jsnext:main": "dist/react-resize-watcher.es.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "build": "rollup -c && tsc --emitDeclarationOnly"
   },
   "repository": {
     "type": "git",
@@ -41,6 +43,8 @@
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
     "prettier": "^2.0.5",
+    "rollup": "^2.7.6",
+    "rollup-plugin-typescript2": "^0.27.0",
     "ts-loader": "^7.0.2",
     "typescript": "^3.8.3"
   },
