@@ -19,7 +19,6 @@ export default class ResizeObserverWrapper {
   }
 
   createObserver() {
-    console.log('create new observer');
     this.observer = new ResizeObserver(this.fireListeners);
   }
 
@@ -38,7 +37,6 @@ export default class ResizeObserverWrapper {
       this.observedMap.set(child, onResize);
       this.observer?.observe(child);
     });
-    console.log(this.observedQueue);
   }
 
   observe = (child: Element, onResize: OnResize) => {
