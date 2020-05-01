@@ -13,6 +13,7 @@ It provides two ways to handle element resizes: `ResizeWatcherElement` and `resi
 - **SSR** ready
 - Does not interfere with **refs**
 - Does not use `ReactDOM.findDOMNode`
+- Uses a single `ResizeObserver` to observe multiple elements
 
 ## Contents
 
