@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "declaration": true,
+    "rootDir": "src",
+    "outDir": "lib",
+    "declarationDir": "lib",
+    "removeComments": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "lib": [
+      "es5",
+      "es6",
+      "dom"
+    ],
+    "skipLibCheck": true
+  },
+  "include": ["./src"]
+}

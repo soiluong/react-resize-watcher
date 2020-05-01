@@ -1,0 +1,56 @@
+{
+  "name": "react-resize-watcher",
+  "version": "0.0.1",
+  "description": "A React interface for the Resize Observer API",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "dist/react-resize-watcher.es.js",
+  "jsnext:main": "dist/react-resize-watcher.es.js",
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "type-check": "tsc",
+    "build": "rollup -c && tsc --emitDeclarationOnly"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soiluong/react-resize-watcher.git"
+  },
+  "keywords": [
+    "react",
+    "resizeobserver"
+  ],
+  "author": "Soi Luong <soi.luong@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soiluong/react-resize-watcher/issues"
+  },
+  "homepage": "https://github.com/soiluong/react-resize-watcher#readme",
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^5.3.18",
+    "babel-loader": "^8.1.0",
+    "babel-preset-react-app": "^9.1.2",
+    "prettier": "^2.0.5",
+    "rollup": "^2.7.6",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "ts-loader": "^7.0.2",
+    "typescript": "^3.8.3"
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "singleQuote": true,
+    "tabWidth": 2
+  }
+}
