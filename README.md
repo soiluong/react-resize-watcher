@@ -36,7 +36,7 @@ yarn add react-resize-watcher
 Wrapping a component with `ResizeWatcherElement` will subscribe its first child DOM element to a `Resize Observer`.
 Upon element resize the `onResize` handler will fire.
 
-```javascript
+```jsx
 const log = ({ contentRect, target }) => console.log({ contentRect, target });
 
 const Demo = () => (
@@ -55,7 +55,7 @@ const Demo = () => (
 
 We can observe any element in a function, if required.
 
-```javascript
+```jsx
 const log = ({ contentRect, target }) => console.log({ contentRect, target });
 
 const Demo = () => {
@@ -69,6 +69,7 @@ const Demo = () => {
     // unobserve element on unmount
     return observedElement;
   });
+
   return (
     <div
       style={{ width: '100%', height: '300px', background: 'red' }}
@@ -94,7 +95,7 @@ onResize function that will be invoked with `ResizeObserverEntry`.
 
 **Accepts two parameters**
 
-`nodeOrSelector: Element | string` and `onResize: Function`
+**`nodeOrSelector: Element | string`** and **`onResize: Function`**
 
 nodeOrSelector: a selector or DOM element to observe.
 
