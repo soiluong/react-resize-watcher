@@ -1,6 +1,6 @@
 {
   "name": "react-resize-watcher",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A React interface for the Resize Observer API",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

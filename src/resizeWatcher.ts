@@ -4,7 +4,10 @@ import { OnResize } from './types';
 const isHTMLElement = (node: Element): node is HTMLElement =>
   node instanceof HTMLElement;
 
-const createElementObserver = (node: Element, onResize: OnResize) => {
+const createElementObserver = (
+  node: Element,
+  onResize: OnResize
+): { unobserve: Function } => {
   if (isHTMLElement(node as Element)) {
     getDefaultObserver().observe(node, onResize);
   }
