@@ -42,7 +42,7 @@ export const StaticResizeWatcherDemo = () => {
     const observedElement = resizeWatcher('.container', log);
 
     // unobserve element on unmount
-    return observedElement;
+    return observedElement.unobserve;
   });
   return (
     <div

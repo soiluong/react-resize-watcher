@@ -9,7 +9,7 @@ const createElementObserver = (node: Element, onResize: OnResize) => {
     getDefaultObserver().observe(node, onResize);
   }
 
-  return () => getDefaultObserver().unobserve(node);
+  return { unobserve: () => getDefaultObserver().unobserve(node) };
 };
 
 export default function resizeWatcher(

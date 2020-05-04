@@ -61,13 +61,17 @@ const log = ({ contentRect, target }) => console.log({ contentRect, target });
 const Demo = () => {
   React.useEffect(() => {
     // can observe a rendered element
+    // resizeWatcher returns the unobserve function already referenced to the node
     const observedElement = resizeWatcher('.container', log);
 
     // or you can observe the document.body
     const bodyElement = resizeWatcher('body', log);
 
     // unobserve element on unmount
-    return observedElement;
+    return () => {
+      observedElement.unobserve();
+      bodyElement.unobserve();
+    }
   });
 
   return (
@@ -91,7 +95,7 @@ Observe an element for changes to its size
 
 onResize function that will be invoked with `ResizeObserverEntry`.
 
-### `resizeWatcher (nodeOrSelector, onResize) => ResizeObserver.unobserve(node)`
+### `resizeWatcher (nodeOrSelector, onResize) => unobserve()`
 
 **Accepts two parameters**
 
@@ -101,7 +105,7 @@ nodeOrSelector: a selector or DOM element to observe.
 
 onResize function that will be invoked with `ResizeObserverEntry`.
 
-`resizeWatcher() => ResizeObserver.unobserve(node)`
+`resizeWatcher.unobserve() => ResizeObserver.unobserve(node)`
 
 resizeWatcher returns the `unobserve()` method that ends the observing of the specified node.
 
